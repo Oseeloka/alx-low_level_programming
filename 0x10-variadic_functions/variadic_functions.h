@@ -1,5 +1,5 @@
-#ifndef VARIADIC_FUNCTIONS_H
-#define VARIADIC_FUNCTIONS_H
+#ifndef _VARIADIC_FUNCTIONS_H_
+#define _VARIADIC_FUNCTIONS_H_
 
 #include <stdarg.h>
 
@@ -9,16 +9,16 @@
  * @print: A function pointer to a function that prints
  *         a data type corresponding to symbol.
  */
-typedef struct printer
+typedef struct print
 {
-	char *symbol;
-	void (*print)(va_list arg);
+	char *t;
+	void (*f)(va_list);
 
-} printer_t;
-
+} print_t;
+int _putchar(char);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
-#endif
+#endif /* _VARIADIC_FUNCTIONS_H_ */
